@@ -1,0 +1,31 @@
+
+{% extends "general.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <h1>User profile</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/storage/users/{{user.id}}/{{user.picture}}" class="img-fluid rounded-start" alt="{{user.name}}">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{user.name}}</h5>
+                <p class="card-text">{{user.email}}</p>
+                <p class="card-text"><small class="text-body-secondary">Last seen 3 mins ago</small></p>
+                {% if can_update %}
+                  <a href="/profile/{{user.id}}/update">Update profile</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

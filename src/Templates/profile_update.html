@@ -1,0 +1,46 @@
+
+{% extends "general.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <h1>Update profile</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            {% if errors %}
+                <div class="alert alert-danger">{{ errors }}</div>
+            {% endif%}
+            <form method="POST" enctype="multipart/form-data">
+
+              <div class="row mb-3">
+                <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+                <div class="col">
+                  <input type="text" class="form-control" id="inputName3" name="name" value="{{user.name}}">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputPicture3" class="col-sm-2 col-form-label">Picture</label>
+                <div class="col">
+                  <input type="file" class="form-control" id="inputPicture3" name="picture">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col">
+                  <input type="password" class="form-control" id="inputPassword3" name="password">
+                </div>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary">Update</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
